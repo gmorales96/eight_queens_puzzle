@@ -18,12 +18,19 @@ This project creates an API using FastAPI to calculate solutions for the N-Queen
     git clone https://github.com/gmorales96/eight_queens_puzzle.git
     ```
 
-2. Build and run the project using Docker Compose:
+2. Create a .env file with the following variables:
+    ```
+    DB_USER=admin
+    DB_PASSWORD=mypassword
+    DB_NAME=eight_queens
+    ```
+
+3. Build and run the project using Docker Compose:
     ```
     docker-compose up --build -d
     ```
 
-3. To stop the project:
+4. To stop the project:
     ```
     docker-compose down
     ```
