@@ -3,14 +3,21 @@ language: python
 python:
   - "3.9"
 
+env:
+  global:
+    - DB_USER=admin
+    - DB_PASSWORD=mypassword
+    - DB_NAME=eight_queens
+
 services:
   - docker
 
 before_install:
+  - ls
   - docker-compose up --build -d
 
 script:
-  - docker-compose exec -T app pytest ./tests/test_queens_problem.py
+  - docker-compose exec -T api pytest ./tests/test_queens_problem.py
 
 after_script:
   - docker-compose down
